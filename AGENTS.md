@@ -53,7 +53,7 @@ choose-architecture · scaffold-project · scaffold-feature · state-management 
 ui-anti-slop (**always** when writing UI) · design-from-brief · design-system-setup · design-critique · motion-and-feedback · store-assets
 
 ### Collaboration — `skills/collaboration/`
-design-handoff-review · api-contract · backend-integration-review · write-pr · write-ticket · explain-to-non-mobile
+design-handoff-review · api-contract · backend-integration-review · write-pr · write-ticket · ship-change · explain-to-non-mobile
 
 ### Product & Management — `skills/product/`
 choose-stack · estimate-feature · mvp-scope · team-and-cost-plan · tech-debt-report · status-report · feature-flags-experiments
