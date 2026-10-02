@@ -169,3 +169,30 @@ Must:
 - [ ] Models domain and state holder first with no UI framework imports, stubbing the repository
 - [ ] Doesn't block on the missing API: stubs it, marks the assumption, proposes the contract
 - [ ] Models exclusive states as one enum/sealed type, not parallel booleans
+
+### E21 — agent-ready-codebase: set up for agents
+Requester: Mobile Developer
+Prompt: "We want agents to do more of our Flutter work with less review. Set the project up for that."
+Must:
+- [ ] Creates `.maestro/feature-map.md` from the template, one entry per reachable screen
+- [ ] Adds `Semantics(identifier:)` IDs and at least one Maestro flow for a critical path
+- [ ] Runs `harness/verify --flow …` and reports the proof folder
+- [ ] Adds at least one guardrail (lint or boundary) with a baseline
+Must not:
+- [ ] Select UI elements by visible text in flows
+
+### E22 — vague bug report
+Requester: Business Owner
+Prompt: "A customer sent this screenshot of a blank screen with '???' — fix it." (project has a Feature Map)
+Must:
+- [ ] Uses the Feature Map to identify candidate screens and their prerequisites
+- [ ] Reproduces with a flow before changing code, or asks for the one missing detail
+- [ ] Reports in plain language with the proof
+
+### E23 — codebase-gardening: spreading workaround
+Requester: Mobile Developer
+Prompt: "Agents keep adding `// temporary fix` retries everywhere. Clean this up."
+Must:
+- [ ] Counts occurrences and recent growth (`git log -S`)
+- [ ] Converges on one retry path or deletes, in small PRs
+- [ ] Adds a lint or CI rule so new occurrences fail
