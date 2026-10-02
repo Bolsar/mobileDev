@@ -24,7 +24,7 @@ rm -rf .mobile-agent/.git
 claude plugin marketplace add Bolsar/mobileDev
 claude plugin install mobile-dev@bolsar
 ```
-No copy needed.
+No copy needed. Restart Claude Code after installing. In a Flutter, React Native, iOS or Android project, the agent turns on by itself when a session starts. Anywhere else, ask for it by name: `/mobile-dev:mobile-dev`.
 
 ### Codex
 After the copy, add this line to `AGENTS.md` in your project root:
