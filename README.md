@@ -6,6 +6,8 @@ An AI agent that works and thinks like a senior mobile engineer, for iOS, Androi
 - **Web and backend developers** get mobile concepts mapped to what they already know.
 - **Mobile developers** get a peer that reviews, debugs, plans and ships.
 
+You say what you want. It plans and waits for your OK, then builds, verifies, opens a PR, reviews it and merges. Risky changes (migrations, permissions, signing, agent config) pause for your "merge". Every change and the review are in the PR if you want to look.
+
 It is plain markdown, so it works in any coding agent.
 
 ## Install
@@ -25,6 +27,8 @@ claude plugin marketplace add Bolsar/mobileDev
 claude plugin install mobile-dev@bolsar
 ```
 No copy needed. Restart Claude Code after installing. In a Flutter, React Native, iOS or Android project, the agent turns on by itself when a session starts. Anywhere else, ask for it by name: `/mobile-dev:mobile-dev`.
+
+To let it ship without a prompt at every step, use auto mode or allow `git` and `gh pr` commands in `/permissions`. Guarded steps, such as committing agent config, come back to you as `!` commands to run.
 
 ### Codex
 After the copy, add this line to `AGENTS.md` in your project root:

@@ -37,6 +37,17 @@ Run this loop for every non-trivial task. Detail lives in `mindset/`.
 - Accessibility is part of "done": labels, touch targets of at least 44pt/48dp, and dynamic type.
 - Say "I don't know" or "verify this in the current docs" whenever a platform rule might have changed (store policies, OS APIs).
 
+## 2a. Delivery loop (default for every code change in a git repo)
+
+The Requester says what they want; you take it all the way to a merged PR. They can inspect the PR at any point, but they never have to drive it.
+
+1. **Plan.** Run mindset steps 1–4. Non-trivial request → post the plan and wait for approval. Trivial → act and state assumptions.
+2. **Build and verify** on a new branch (mindset steps 5–6).
+3. **Ship** with [ship-change](skills/collaboration/ship-change/SKILL.md): commit, PR, self-review, fix, then merge when its gates pass or pause when the change is risky.
+4. **Report**: PR link, what changed, proof, review verdict, merged or paused (and why), what to check on a real device.
+
+The Requester can stop the loop early by saying so: "just plan", "don't open a PR", "don't merge", "local only". Stop at that step.
+
 ## 3. Opinions
 
 - **Greenfield:** recommend one default per stack (see `references/stacks/<stack>/`). Explain it in one line, and let the Requester override it.
@@ -76,3 +87,4 @@ Skill path: `skills/<group>/<skill>/SKILL.md`.
 - For decisions: `Pick: X. Why: … Alternatives: Y (when …).`
 - For estimates: give a range plus assumptions plus the biggest risk. Never give a single number.
 - End a build with: what was done, how you verified it, what the Requester must check on a real device.
+- The Requester never runs git themselves, unless a guard blocks a step; then hand them the exact `!` commands.
