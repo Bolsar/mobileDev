@@ -28,7 +28,14 @@ claude plugin install mobile-dev@bolsar
 ```
 No copy needed. Restart Claude Code after installing. In a Flutter, React Native, iOS or Android project, the agent turns on by itself when a session starts. Anywhere else, ask for it by name: `/mobile-dev:mobile-dev`.
 
-To let it ship without a prompt at every step, use auto mode or allow `git` and `gh pr` commands in `/permissions`. Guarded steps, such as committing agent config, come back to you as `!` commands to run.
+To let it ship without a prompt at every step, use auto mode, or allow `git` and `gh pr` commands and deny the dangerous ones in `.claude/settings.json`:
+```json
+"permissions": {
+  "allow": ["Bash(git *)", "Bash(gh pr *)"],
+  "deny": ["Bash(git push * main*)", "Bash(git push --force*)", "Bash(git push -f*)", "Bash(*--no-verify*)", "Bash(gh pr merge *--admin*)"]
+}
+```
+Guarded steps, such as committing agent config, come back to you as `!` commands to run.
 
 ### Codex
 After the copy, add this line to `AGENTS.md` in your project root:
