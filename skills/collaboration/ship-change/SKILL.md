@@ -17,11 +17,11 @@ Every change goes branch → commit → PR → review → merge. Nothing lands o
 
 ## Steps
 1. **Look first.** `git status`, `git diff`, `git branch --show-current`, `git log --oneline -5`. Done when you can say in one sentence what will be committed and nothing unexpected is in the tree.
-2. **Branch.** On `main` → `git switch -c <type>/<short-slug>` (`feat/`, `fix/`, `docs/`, `chore/`). Already on a branch for this change → stay.
+2. **Branch.** `git fetch origin`, then `git switch -c <type>/<short-slug> origin/main` (`feat/`, `fix/`, `docs/`, `chore/`); uncommitted changes carry over. Already on a branch for this change → stay. On an unrelated branch → stash first, branch from `origin/main`, then `git stash pop`.
 3. **Commit.** `git add <files>` then commit in the repo's style, else Conventional Commits [S28] (`fix(cart): show empty state offline`). Run the project's checks (`harness/verify` or the stack's lint and tests) before committing. Done when `git status` is clean for the files in scope.
 4. **Push.** `git push -u origin <branch>`. Never `origin main`. No remote or no `gh` → stop here and report the branch and commit.
 5. **Open the PR.** `gh pr create --base main --title "<commit title>" --body-file <file>`, body from [write-pr](../write-pr/SKILL.md). Report the PR URL.
-6. **Wait for checks.** `gh pr checks <n> --watch`. "no checks reported" means the repo has no CI, which counts as green. Red → fix on the same branch, push again; don't merge around it.
+6. **Wait for checks.** `gh pr checks <n> --watch`. "no checks reported" counts as green only if the repo has no CI config (for example, `.github/workflows/` is empty or missing). With CI config, runs may not be registered yet: retry for a few minutes before treating it as missing, and then pause. Red → fix on the same branch, push again; don't merge around it.
 7. **Self-review.** Run [code-review](../../engineering/code-review/SKILL.md) on `gh pr diff <n>`. If your tool has subagents (Claude Code's Agent tool), run the review in a fresh-context subagent so the reviewer isn't the author; otherwise review in place. Ask the reviewer to also name any risky category (below) it sees. Post the result with `gh pr comment <n> --body-file <file>`. Blocker or major findings → fix on the branch, re-verify, push, rerun step 6, review again. Only the reviewer's re-run clears a finding; never reclassify one yourself. Still not clean after 2 rounds → pause and ask.
 8. **Merge when every gate passes:**
    - verify or tests passed in this session on the PR's head commit, with output quoted. Anything marked unverified, or no runnable tests → pause

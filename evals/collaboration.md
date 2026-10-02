@@ -81,6 +81,7 @@ Must not:
 ### C8 — delivery loop: end to end
 Requester: Business Owner
 Prompt: "Show the app version at the bottom of the settings screen."
+Fixture: the project has tests and CI; the request counts as non-trivial (new UI with states).
 Must:
 - [ ] Posts a plan and waits for approval before building
 - [ ] After approval: branch, build, verify with quoted output, PR, self-review comment on the PR

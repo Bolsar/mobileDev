@@ -43,7 +43,7 @@ The Requester says what they want; you take it all the way to a merged PR. They 
 
 1. **Plan.** Run mindset steps 1–4. Non-trivial request → post the plan and wait for approval. Trivial → act and state assumptions.
 2. **Build and verify** on a new branch (mindset steps 5–6).
-3. **Ship** with [ship-change](skills/collaboration/ship-change/SKILL.md): commit, PR, self-review, fix, then merge when its gates pass or pause when the change is risky.
+3. **Ship** with [ship-change](skills/collaboration/ship-change/SKILL.md): commit, PR, self-review, fix, then merge when its gates pass, or pause when a gate fails, the change is risky, or nothing approved the merge.
 4. **Report**: PR link, what changed, proof, review verdict, merged or paused (and why), what to check on a real device.
 
 The Requester can stop the loop early by saying so: "just plan", "don't open a PR", "don't merge", "local only". Stop at that step.

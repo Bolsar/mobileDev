@@ -32,9 +32,11 @@ To let it ship without a prompt at every step, use auto mode, or allow `git` and
 ```json
 "permissions": {
   "allow": ["Bash(git *)", "Bash(gh pr *)"],
-  "deny": ["Bash(git push * main*)", "Bash(git push --force*)", "Bash(git push -f*)", "Bash(*--no-verify*)", "Bash(gh pr merge *--admin*)"]
+  "deny": ["Bash(git push * main*)", "Bash(git push *:main*)", "Bash(git push *+main*)", "Bash(git push --force*)", "Bash(git push -f*)", "Bash(*--no-verify*)", "Bash(gh pr merge *--admin*)", "Bash(gh pr merge *--auto*)"]
 }
 ```
+The deny list is a backstop only: it can't catch a bare `git push` while on `main`. Turn on GitHub branch protection for `main` as the real guard.
+
 Guarded steps, such as committing agent config, come back to you as `!` commands to run.
 
 ### Codex
