@@ -32,5 +32,10 @@
 - Upload dSYMs to the crash reporter on every build.
 - TestFlight first, then phased release [S97][S100] ([ios-store-submission](../../../skills/release/ios-store-submission/SKILL.md)).
 
+## Verify harness
+`IOS_SCHEME=App <agent root>/harness/verify --flow .maestro/<flow>.yaml` with a simulator booted. It runs SwiftLint and `xcodebuild test`, then saves `xcrun simctl io booted screenshot` and `simctl spawn booted log show` output. Proof lands in `.mobile-agent-proof/<timestamp>/`. Without the harness, run the same commands by hand.
+
+Guard recipe: SwiftLint `custom_rules` with a regex and `severity: error` (for example, banning `// HACK` or `DispatchQueue.main.sync`); local SPM packages for boundaries.
+
 ## Done check
 Builds with zero new warnings, lint clean, tests pass, runs on the smallest and largest simulator, dark mode, largest text size, and with the Network Link Conditioner set to 100% loss.

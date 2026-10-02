@@ -34,5 +34,10 @@
 - OTA via EAS Update [S89]: set `runtimeVersion` policy so an update never reaches a binary with different native code; roll out to a percentage first ([ota-updates](../../../skills/release/ota-updates/SKILL.md)).
 - Store rules are the native ones ([ios-store-submission](../../../skills/release/ios-store-submission/SKILL.md), [android-store-submission](../../../skills/release/android-store-submission/SKILL.md)).
 
+## Verify harness
+`<agent root>/harness/verify --flow .maestro/<flow>.yaml` with a release or preview build installed on a running simulator or emulator. It runs `tsc --noEmit`, ESLint and Jest, then saves the device screenshot and log. Proof lands in `.mobile-agent-proof/<timestamp>/`. Without the harness, run the same commands by hand.
+
+Guard recipe: ESLint `no-restricted-imports`, `no-warning-comments` or a small local plugin rule, set to `error`; `testID` on everything a flow touches.
+
 ## Done check
 `tsc` and lint clean, tests pass, a release (not dev) build runs on a small Android phone and a large iPhone, dark mode, largest font, airplane mode, keyboard open on every form, Android back on every screen, and the draft survives a process kill.
