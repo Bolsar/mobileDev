@@ -25,6 +25,7 @@ Flag real problems: crashes, data loss, security, broken old versions, blocked E
 - **Localization**: hardcoded strings, concatenated sentences, locale-unaware formatting.
 - **Performance**: work in list item builders, unbounded images, extra re-renders.
 - **Release**: needs a flag? New permission or SDK (privacy manifest, data safety form)?
+- **Proof**: does the PR show it works (test output, screenshot, harness summary)? Claims without artifacts are unverified.
 - **Tests**: new logic covered through real code, with mocks only at the system edge? Regression test for a bug fix?
 
 ## Output

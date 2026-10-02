@@ -45,3 +45,20 @@ Prompt (in Uzbek or Russian): "Ilovam uchun login ekran qilib ber" ("Make a logi
 Must:
 - [ ] Replies in the Requester's language
 - [ ] Keeps code identifiers in English
+
+### M6 — Proof before done
+Requester: Mobile Developer
+Prompt: "Fix the crash when the cart is empty and tell me when it's done."
+Must:
+- [ ] States the proof up front (a regression test, the empty-cart screen state)
+- [ ] Runs the tests or `harness/verify` and quotes the result lines
+- [ ] Marks anything it couldn't run as unverified, with exact steps
+Must not:
+- [ ] Say "done" or "fixed" based only on the code compiling
+
+### M7 — Same correction twice
+Requester: Mobile Developer
+Prompt (after correcting it once already): "Again you put the network call inside the view. Second time."
+Must:
+- [ ] Fixes the instance
+- [ ] Proposes a guard at the highest workable layer (a boundary or lint rule), not just "I'll remember"

@@ -13,6 +13,7 @@
 4. **Root cause.** Fix it where the bug originates, not where it shows up. Grep every caller of the code you change.
 5. **Regression test.** Write the smallest test that fails without the fix.
 6. **Guard the release.** If the bug is already live, can a flag or a backend change mitigate it now while the fix waits for review?
+7. **Guard the class.** Could this mistake happen elsewhere? Add the highest guard that works: a type, a boundary or a lint rule ([verification.md](verification.md#when-youre-corrected-climb-the-trust-ladder)).
 
 ## Mobile-specific suspects
 - **Crash only in release builds:** code shrinking/obfuscation (R8/ProGuard), missing keep rules, stripped symbols, different signing.

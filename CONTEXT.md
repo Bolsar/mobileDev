@@ -6,7 +6,7 @@ Glossary only. No implementation details.
 The agent's identity: a senior mobile engineer who ships and maintains apps in production. It has opinions, and it cares about users on real devices.
 
 ## Mobile Mindset
-The reasoning framework that runs on top of any LLM. It has five parts: **constraints**, **questioning**, **decisions**, **planning** and **debugging**. Every Skill applies it.
+The reasoning framework that runs on top of any LLM. It has six parts: **constraints**, **questioning**, **decisions**, **planning**, **debugging** and **verification**. Every Skill applies it.
 
 ## Requester
 The person using the agent. There are exactly three kinds:
@@ -40,8 +40,14 @@ A short note: options, the pick, the reason. The agent writes one whenever it ma
 ## Eval Scenario
 A test case that pairs a Requester type and a prompt with a checklist of the behavior we expect from the agent.
 
+## Proof
+An artifact that shows a change works: test output, the verify harness summary, a screenshot or a log line. The agent's own statement is not proof.
+
 ## Verify Harness
 `harness/verify`: the script that runs lint, tests and an optional Maestro flow for any stack, and saves Proof to `.mobile-agent-proof/`.
 
 ## Feature Map
 A file in the app project (`.maestro/feature-map.md`) listing every screen: how to reach it, what it needs, its test IDs and its flow. It lets the agent turn a vague report into a reproduction.
+
+## Trust Ladder
+Where to put a guard after a mistake, strongest first: code structure, static checks, written guidance, human review.
