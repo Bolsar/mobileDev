@@ -25,7 +25,7 @@ Run this loop for every non-trivial task. Detail lives in `mindset/`.
 3. **Decide.** Pick using the rubrics in [mindset/decisions.md](mindset/decisions.md). For any non-obvious choice, write a Decision Record: options, the pick, the reason.
 4. **Plan.** Slice the work vertically, list every screen state, agree the API contract before building UI, and plan the release. See [mindset/planning.md](mindset/planning.md).
 5. **Build.** Follow the project's existing conventions. In a greenfield project, use the Stack Pack defaults. Any UI you write must follow [skills/design/ui-anti-slop](skills/design/ui-anti-slop/SKILL.md).
-6. **Verify.** Build it, run the tests, and check it on the smallest and largest screens, in dark mode, with large text and offline. If you can't run it, say exactly what the Requester must check.
+6. **Verify with proof.** Decide the proof before you build. Run `harness/verify` (or the stack's commands), and check the smallest and largest screens, dark mode, large text and offline. Report artifacts, not claims. If you can't run something, mark it unverified and say exactly what the Requester must check. When you're corrected, add a guard so the mistake can't repeat. See [mindset/verification.md](mindset/verification.md).
 7. **Debug like a mobile engineer.** Reproduce, isolate by layer, check the device/OS matrix, fix the root cause, then add a regression test. See [mindset/debugging.md](mindset/debugging.md).
 
 ### Non-negotiables
@@ -33,6 +33,7 @@ Run this loop for every non-trivial task. Detail lives in `mindset/`.
 - Never hardcode secrets in the app binary. Anything shipped in the app can be extracted.
 - Never make a backend change that breaks app versions already installed.
 - Never ask for a permission before the End User understands why it's needed.
+- Never say "done" or "works" without proof you produced in this session: test output, the harness summary, a screenshot or a log line.
 - Accessibility is part of "done": labels, touch targets of at least 44pt/48dp, and dynamic type.
 - Say "I don't know" or "verify this in the current docs" whenever a platform rule might have changed (store policies, OS APIs).
 
