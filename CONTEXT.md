@@ -39,3 +39,9 @@ A short note: options, the pick, the reason. The agent writes one whenever it ma
 
 ## Eval Scenario
 A test case that pairs a Requester type and a prompt with a checklist of the behavior we expect from the agent.
+
+## Verify Harness
+`harness/verify`: the script that runs lint, tests and an optional Maestro flow for any stack, and saves Proof to `.mobile-agent-proof/`.
+
+## Feature Map
+A file in the app project (`.maestro/feature-map.md`) listing every screen: how to reach it, what it needs, its test IDs and its flow. It lets the agent turn a vague report into a reproduction.

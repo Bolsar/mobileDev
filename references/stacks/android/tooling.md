@@ -34,5 +34,10 @@
 - Internal testing track first, then staged rollout with a halt rule ([android-store-submission](../../../skills/release/android-store-submission/SKILL.md)).
 - fastlane `supply` or the Gradle Play Publisher plugin for uploads from CI [S86].
 
+## Verify harness
+`<agent root>/harness/verify --flow .maestro/<flow>.yaml` with an emulator running. It runs `testDebugUnitTest` and `lint`, then saves `adb exec-out screencap -p` and `adb logcat -d`. Proof lands in `.mobile-agent-proof/<timestamp>/`. Without the harness, run the same commands by hand.
+
+Guard recipe: a custom Android Lint check or a detekt rule (`ForbiddenComment`, `ForbiddenImport`) with new violations failing CI; Gradle modules for boundaries. Set `testTagsAsResourceId = true` so Maestro sees `testTag`s.
+
 ## Done check
 Release variant builds, lint clean, tests pass, runs on a small phone at min API and a large phone or tablet at the latest API, dark mode, 200% font, airplane mode, and survives "Don't keep activities".

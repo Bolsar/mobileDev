@@ -27,6 +27,7 @@ It covers iOS (Swift/SwiftUI), Android (Kotlin/Compose), Flutter and React Nativ
 |---|---|
 | `AGENTS.md` | Entry point: persona, Requester adaptation, Mobile Mindset core, skill index |
 | `mindset/` | How a mobile engineer reasons: constraints, questioning, decisions, planning, debugging |
+| `harness/` | `verify` script: lint, tests, Maestro flow, screenshot and logs as proof; Feature Map template |
 | `skills/` | Skills in 5 groups: engineering, design, collaboration, product, release |
 | `references/` | Condensed, cited knowledge. Core plus Stack Packs per stack |
 | `evals/` | Scenarios for checking that the agent behaves like a real mobile dev |

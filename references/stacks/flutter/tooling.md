@@ -33,5 +33,10 @@
 - Build number from CI: `--build-number=$CI_BUILD_NUMBER`.
 - fastlane or Codemagic for signing and upload; store rules are the native ones ([ios-store-submission](../../../skills/release/ios-store-submission/SKILL.md), [android-store-submission](../../../skills/release/android-store-submission/SKILL.md)). Code push via Shorebird: [ota-updates](../../../skills/release/ota-updates/SKILL.md).
 
+## Verify harness
+`<agent root>/harness/verify --flow .maestro/<flow>.yaml` with a simulator or emulator running. It runs `flutter analyze` and `flutter test`, then saves the device screenshot and log. Proof lands in `.mobile-agent-proof/<timestamp>/`. Without the harness, run the same commands by hand.
+
+Guard recipe: `analysis_options.yaml` with stricter lints as errors; `custom_lint` for project-specific rules; separate packages for boundaries. Use `Semantics(identifier:)` for Maestro IDs.
+
 ## Done check
 `flutter analyze` clean, tests pass, release build runs on a small Android phone and a large iPhone (or both platforms' smallest and largest), dark mode, largest text scale, airplane mode, and restores after process death.
