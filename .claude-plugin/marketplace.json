@@ -1,0 +1,14 @@
+{
+  "name": "bolsar",
+  "owner": {
+    "name": "Bolsar"
+  },
+  "description": "Mobile development agents and skills by Bolsar.",
+  "plugins": [
+    {
+      "name": "mobile-dev",
+      "source": "./",
+      "description": "A senior mobile engineer agent for iOS, Android, Flutter and React Native."
+    }
+  ]
+}
