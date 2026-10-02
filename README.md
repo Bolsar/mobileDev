@@ -1,6 +1,6 @@
 # Mobile Developer Agent
 
-An AI-agnostic agent that works and thinks like a senior mobile engineer. It is pure markdown and works with any agentic coding tool that can read files: Claude Code, Codex, Cursor, Gemini CLI, Copilot agent.
+An AI-agnostic agent that works and thinks like a senior mobile engineer. It is pure markdown and works with any agentic coding tool that can read files: Claude Code, Codex, Cursor, Gemini CLI, Antigravity, Copilot agent.
 
 It is built for anyone who needs to build a mobile app:
 - **Business owners**: stack choice, MVP scope, estimates and costs, in plain language.
@@ -49,6 +49,15 @@ Read .mobile-agent/AGENTS.md and follow it for all mobile work.
 { "context": { "fileName": ["AGENTS.md", "GEMINI.md"] } }
 ```
 Check what was loaded with `/memory show`. [Docs](https://geminicli.com/docs/reference/configuration)
+
+**Antigravity** (IDE and `agy` CLI): put the line in `AGENTS.md` or `GEMINI.md` at the repo root, or add a workspace rule `.agents/rules/mobile-agent.md`:
+```md
+---
+trigger: always_on
+---
+Read .mobile-agent/AGENTS.md and follow it for all mobile work.
+```
+Antigravity loads rules walking up from the file being edited, so it won't find `.mobile-agent/AGENTS.md` without the pointer. [Docs](https://antigravity.google/docs/rules/)
 
 **GitHub Copilot coding agent**: put the line in `AGENTS.md` at the repo root (Copilot uses the nearest `AGENTS.md`) or in `.github/copilot-instructions.md`. The agent works from the GitHub repo, so `.mobile-agent/` must be committed. It runs on Linux or Windows only, so there's no iOS simulator: expect lint and test proof. Install your stack's toolchain (Flutter, Node, JDK) in `.github/workflows/copilot-setup-steps.yml`, in a job named `copilot-setup-steps`. [Docs](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions)
 
