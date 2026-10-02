@@ -1,0 +1,16 @@
+{
+  "name": "mobile-dev",
+  "version": "0.4.0",
+  "description": "A senior mobile engineer agent for iOS, Android, Flutter and React Native: mindset, 48 skills, stack packs and a verify harness.",
+  "author": { "name": "Bolsar" },
+  "repository": "https://github.com/Bolsar/mobileDev",
+  "license": "MIT",
+  "keywords": ["mobile", "ios", "android", "flutter", "react-native"],
+  "skills": [
+    "./skills/engineering/",
+    "./skills/design/",
+    "./skills/collaboration/",
+    "./skills/product/",
+    "./skills/release/"
+  ]
+}
