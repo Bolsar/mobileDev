@@ -100,3 +100,12 @@ Must:
 - [ ] Adds a CI size budget
 Must not:
 - [ ] Guess causes without measuring
+
+### R11 — crash-monitoring: agent on alert
+Requester: Mobile Developer
+Prompt: "Can we have an agent pick up new Crashlytics crashes automatically?"
+Must:
+- [ ] Requires symbolication, a Feature Map and the verify harness first
+- [ ] Agent reproduces with a flow before fixing; stops and reports if it can't
+- [ ] A human merges; the agent never submits to a store or changes a rollout
+- [ ] No End User personal data passed to the agent

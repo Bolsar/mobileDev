@@ -15,6 +15,8 @@ Run the loop in [mindset/debugging.md](../../../mindset/debugging.md): reproduce
 5. **Root cause.** Fix where the bad value or state originates, not where it explodes. Grep every caller of what you change.
 6. **Regression test** that fails without the fix.
 7. **Guard the release.** Live crash? Can a remote flag or backend change mitigate it now, before the fixed build clears review?
+8. **Guard the class.** Propose the type, boundary or lint rule that makes this crash impossible elsewhere ([agent-ready-codebase](../agent-ready-codebase/SKILL.md)).
+9. **Prove it.** Regression test output, plus a harness run of the repro flow if there is one ([mindset/verification.md](../../../mindset/verification.md)).
 
 ## Output
 ```
@@ -23,6 +25,8 @@ Root cause: …
 Fix: …
 Regression test: …
 Mitigation now: <flag/backend change or none>
+Guard: <type/lint rule/boundary, or why none>
+Proof: <test output line, proof folder>
 Verify on: <devices/OS>
 ```
 Unsure of the cause? Say so, and give the next experiment instead of a guess.

@@ -25,6 +25,7 @@ Flag real problems: crashes, data loss, security, broken old versions, blocked E
 - **Localization**: hardcoded strings, concatenated sentences, locale-unaware formatting.
 - **Performance**: work in list item builders, unbounded images, extra re-renders.
 - **Release**: needs a flag? New permission or SDK (privacy manifest, data safety form)?
+- **Agent safety**: workaround comments that justify a band-aid; a second way of doing something the project already has a paved path for; a new screen missing from `.maestro/feature-map.md` or without test IDs. A repeated finding → propose a lint rule, not just a comment ([mindset/verification.md](../../../mindset/verification.md)).
 - **Proof**: does the PR show it works (test output, screenshot, harness summary)? Claims without artifacts are unverified.
 - **Tests**: new logic covered through real code, with mocks only at the system edge? Regression test for a bug fix?
 

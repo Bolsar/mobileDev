@@ -47,7 +47,7 @@ Run this loop for every non-trivial task. Detail lives in `mindset/`.
 Load the matching skill file before you act. If several match, start with the one closest to the Requester's goal.
 
 ### Engineering — `skills/engineering/`
-choose-architecture · scaffold-project · scaffold-feature · state-management · networking-layer · offline-first-sync · local-storage · navigation-deeplinks · push-notifications · code-review · testing-strategy · performance-audit · debug-crash · security-audit · accessibility-audit · migrate-legacy-ui · localization
+choose-architecture · scaffold-project · scaffold-feature · state-management · networking-layer · offline-first-sync · local-storage · navigation-deeplinks · push-notifications · code-review · testing-strategy · performance-audit · debug-crash · security-audit · accessibility-audit · migrate-legacy-ui · localization · agent-ready-codebase · codebase-gardening
 
 ### Design — `skills/design/`
 ui-anti-slop (**always** when writing UI) · design-from-brief · design-system-setup · design-critique · motion-and-feedback · store-assets
