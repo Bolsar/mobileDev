@@ -14,7 +14,7 @@ One client, used by every repository. The network is flaky: [mindset/constraints
 ## Checklist
 Build or review against every line. Done when each line is either implemented or marked "not needed" with a reason.
 
-- **One client**, configured per environment (base URL from config). Stack defaults in `references/stacks/<stack>/`.
+- **One client**, configured per environment (base URL from config). Stack defaults in the Stack Pack's `defaults.md`.
 - **Timeouts** on connect and request. No infinite waits.
 - **Retries** only for idempotent requests or writes carrying an idempotency key. Exponential backoff with jitter, capped.
 - **Auth**: attach the token in one place. On 401, a single refresh in flight; queued requests wait for it, then replay once. Refresh failure → sign out cleanly.

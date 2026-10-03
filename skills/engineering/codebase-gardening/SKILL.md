@@ -20,7 +20,7 @@ One workaround copied by agents becomes the pattern within weeks [S155]. The gar
    - **Delete**: dead code, finished flags, impossible shims. Do it now.
    - **Converge**: migrate to the paved path. If it's big, migrate the hottest files and leave a ticket for the rest.
    - **Fence**: add a lint rule or CI check that fails on new uses ([agent-ready-codebase](../agent-ready-codebase/SKILL.md) has per-stack recipes) and baseline the existing ones. Use this when cleanup must wait.
-4. **Verify.** Each change goes through `harness/verify`; deleting code needs the same proof as adding it ([mindset/verification.md](../../../mindset/verification.md)).
+4. **Verify.** Each change goes through the Stack Pack's `verify`; deleting code needs the same proof as adding it ([mindset/verification.md](../../../mindset/verification.md)).
 5. **Keep PRs small.** One weed per PR, so a revert is cheap.
 
 ## Output

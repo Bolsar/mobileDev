@@ -10,6 +10,17 @@ You say what you want. It plans and waits for your OK, then builds, verifies, op
 
 It is plain markdown, so it works in any coding agent.
 
+This repo is the shared core. Add the Stack Pack for your app's stack next to it:
+
+| Stack | Repo |
+|---|---|
+| iOS (Swift) | [mobile-dev-ios](https://github.com/Bolsar/mobile-dev-ios) |
+| Android (Kotlin) | [mobile-dev-android](https://github.com/Bolsar/mobile-dev-android) |
+| Flutter | [mobile-dev-flutter](https://github.com/Bolsar/mobile-dev-flutter) |
+| React Native | [mobile-dev-react-native](https://github.com/Bolsar/mobile-dev-react-native) |
+
+Each Stack Pack holds that stack's defaults, idioms, tooling and a `verify` script. It needs this repo.
+
 ## Install
 
 Pick your tool:
@@ -18,13 +29,15 @@ Pick your tool:
 Every tool except the Claude Code plugin starts by copying the agent into your app project. Commit the copy so your team gets it too:
 ```sh
 git clone https://github.com/Bolsar/mobileDev .mobile-agent
-rm -rf .mobile-agent/.git
+git clone https://github.com/Bolsar/mobile-dev-<stack> .mobile-agent/stacks/<stack>   # ios, android, flutter or react-native
+rm -rf .mobile-agent/.git .mobile-agent/stacks/*/.git
 ```
 
 ### Claude Code
 ```sh
 claude plugin marketplace add Bolsar/mobileDev
 claude plugin install mobile-dev@bolsar
+claude plugin install mobile-dev-<stack>@bolsar   # ios, android, flutter or react-native
 ```
 No copy needed. Restart Claude Code after installing. In a Flutter, React Native, iOS or Android project, the agent turns on by itself when a session starts. Anywhere else, ask for it by name: `/mobile-dev:mobile-dev`.
 
@@ -101,9 +114,9 @@ Ask for what you need:
 | `AGENTS.md` | Entry point: who the agent is, how it works, skill index |
 | `mindset/` | How a mobile engineer thinks |
 | `skills/` | Step-by-step skills: engineering, design, collaboration, product, release |
-| `references/` | Cited knowledge, plus a pack per stack |
-| `harness/` | `verify` script that runs lint and tests and saves proof |
-| `evals/` | Test scenarios for the agent itself |
+| `references/` | Cited, stack-agnostic knowledge |
+| `hooks/` | Session hook: detects the stack and turns the agent on |
+| `evals/` | Smoke scenarios for the agent itself |
 
 Vocabulary: [CONTEXT.md](CONTEXT.md). Decisions: [docs/adr](docs/adr).
 

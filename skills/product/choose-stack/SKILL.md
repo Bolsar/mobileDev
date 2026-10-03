@@ -17,7 +17,7 @@ The hardest-to-reverse decision in the project; a rewrite later costs months. Us
 2. **Knock out options** that fail a hard requirement (a device API with no maintained plugin; a team that can't staff it). Done when ≤ 3 options remain.
 3. **Score the rest** on: time to first release, cost of two platforms over 3 years, access to platform APIs, hiring, performance, risk of the framework's own churn.
 4. **Check the risky parts** for the leading option: is each must-have device feature supported by a maintained, first-party or widely used package? When unsure, recommend a 2–5 day spike on that feature before committing.
-5. **Write the Decision Record.** Then point to the Stack Pack defaults (`references/stacks/<stack>/`) and [choose-architecture](../../engineering/choose-architecture/SKILL.md).
+5. **Write the Decision Record.** Then point to the Stack Pack defaults (`mobile-dev-<stack>`, `defaults.md`) and [choose-architecture](../../engineering/choose-architecture/SKILL.md).
 
 ## Pitfalls to name
 - Cross-platform shares code, not the release process: still two stores, two reviews, two sets of device bugs.

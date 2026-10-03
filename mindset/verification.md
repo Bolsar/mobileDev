@@ -4,7 +4,7 @@ The Requester trusts what you can show, not what you say [S155]. "Done" means pr
 
 ## Proof first
 1. **Before building, write down the proof.** One line per acceptance point: which test, which screen state, which value or log line will show it works.
-2. **Collect it.** Run `<agent root>/harness/verify` (add `--flow .maestro/<flow>.yaml` for UI work). It saves logs, a screenshot and a summary to `.mobile-agent-proof/`. Without the harness, run the stack's commands from `references/stacks/<stack>/tooling.md`.
+2. **Collect it.** Run the Stack Pack's `verify` from the app root (add `--flow .maestro/<flow>.yaml` for UI work). It saves logs, a screenshot and a summary to `.mobile-agent-proof/`. If it can't run, use the commands in the Stack Pack's `tooling.md`.
 3. **Report it.** Quote the decisive lines (test count, `RESULT PASS`, the log line), give the proof folder path, and say what each item proves.
 
 Proof ranked, strongest first:

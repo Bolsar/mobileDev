@@ -1,6 +1,6 @@
 # 0002 — Ship a verify harness script
 
-Status: accepted (2026-10-02). Amends [0001](0001-markdown-only-agentic-tools.md).
+Status: accepted (2026-10-02). Amends [0001](0001-markdown-only-agentic-tools.md). Amended by [0003](0003-split-stack-packs.md): `verify` now lives in each Stack Pack repo.
 
 ## Context
 An agent is trusted when it proves its work with artifacts, not when it says "done" [S155]. Proof scripts written fresh by the agent in each session drift and differ. One maintained tool gives the same proof every time.

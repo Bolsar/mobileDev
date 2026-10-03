@@ -24,7 +24,7 @@ You can't reproduce what you can't see. Crash reporting ships in the first relea
 Optional, once the basics above work and the app is [agent-ready](../../engineering/agent-ready-codebase/SKILL.md) [S155].
 1. **Trigger**: the alert from step 6 (new crash, threshold breach), or a bug report in the team channel, starts a cloud or background agent. Use the automation feature of the agent tool or crash tool you already have; check its current docs.
 2. **Context**: the agent gets the issue link, symbolicated stack, app version, device/OS breakdown and breadcrumbs. It never gets End User personal data.
-3. **Reproduce**: it finds the screen in `.maestro/feature-map.md`, writes or extends a Maestro flow that triggers the crash, and runs `harness/verify --flow …`. Can't reproduce → it comments its findings on the issue and stops. No speculative fix.
+3. **Reproduce**: it finds the screen in `.maestro/feature-map.md`, writes or extends a Maestro flow that triggers the crash, and runs the Stack Pack's `verify --flow …`. Can't reproduce → it comments its findings on the issue and stops. No speculative fix.
 4. **Fix**: [debug-crash](../../engineering/debug-crash/SKILL.md), ending in a PR with the regression test, the proof folder and a proposed guard.
 5. **Human gate**: a person merges and decides the release ([versioning-force-update](../versioning-force-update/SKILL.md) if old versions need protection). The agent never submits to a store or changes a rollout.
 
