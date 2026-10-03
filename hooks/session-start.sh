@@ -3,7 +3,7 @@
 # agent is always on instead of waiting for Claude to pick the skill.
 # ponytail: checks the project root only; monorepos with the app in a subfolder fall back to the mobile-dev skill.
 root="${CLAUDE_PLUGIN_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
-cd "${CLAUDE_PROJECT_DIR:-.}" || exit 0
+cd "${CLAUDE_PROJECT_DIR:-.}" 2>/dev/null || exit 0
 
 # Order matters: Flutter and React Native projects also contain ios/ and android/.
 if [ -f pubspec.yaml ]; then stack=flutter

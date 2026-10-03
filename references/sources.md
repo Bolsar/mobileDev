@@ -122,6 +122,10 @@ References cite these as `[S#]`. Everything in this repo is condensed in our own
 
 ## Stack Packs
 S103–S154 moved to each `mobile-dev-<stack>` repo's `sources.md`.
+Kept here because core skills cite them too:
+- **S109** SwiftLint — https://github.com/realm/SwiftLint
+- **S148** Maestro — Docs — https://docs.maestro.dev/
+- **S152** TypeScript — `strict` — https://www.typescriptlang.org/tsconfig/#strict
 
 ## Agent practice
 - **S155** Lauren Tan (@poteto) — *How I shipped 2,500 PRs last month* (talk, 2026) — https://x.com/poteto/status/2102050467505430555
