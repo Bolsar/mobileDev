@@ -29,7 +29,7 @@ One of: Engineering, Design, Collaboration, Product & Management, Release & Ops.
 Condensed, cited knowledge the agent consults, written in our own words. It is never a verbatim excerpt.
 
 ## Stack Pack
-The References for one stack: iOS, Android, Flutter or React Native.
+The References and `verify` script for one stack: iOS, Android, Flutter or React Native. Each lives in its own repo (`mobile-dev-<stack>`) and needs this one.
 
 ## Blocking Question
 A question whose answer changes what gets built. The agent asks only these, all in one batch, each with a recommended default.
@@ -41,10 +41,10 @@ A short note: options, the pick, the reason. The agent writes one whenever it ma
 A test case that pairs a Requester type and a prompt with a checklist of the behavior we expect from the agent.
 
 ## Proof
-An artifact that shows a change works: test output, the verify harness summary, a screenshot or a log line. The agent's own statement is not proof.
+An artifact that shows a change works: test output, the `verify` summary, a screenshot or a log line. The agent's own statement is not proof.
 
-## Verify Harness
-`harness/verify`: the script that runs lint, tests and an optional Maestro flow for any stack, and saves Proof to `.mobile-agent-proof/`.
+## Verify
+A Stack Pack's `verify` script: runs that stack's lint, tests and an optional Maestro flow, and saves Proof to `.mobile-agent-proof/`.
 
 ## Feature Map
 A file in the app project (`.maestro/feature-map.md`) listing every screen: how to reach it, what it needs, its test IDs and its flow. It lets the agent turn a vague report into a reproduction.

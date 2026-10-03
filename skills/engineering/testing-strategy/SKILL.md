@@ -5,7 +5,7 @@ description: Decide what to test and how for a mobile app (test pyramid, tools, 
 
 # Testing Strategy
 
-The shape, the must-test list and practices: [references/core/testing.md](../../../references/core/testing.md). Tools per stack: `references/stacks/<stack>/`.
+The shape, the must-test list and practices: [references/core/testing.md](../../../references/core/testing.md). Tools per stack: the Stack Pack's `tooling.md`.
 
 ## Blocking Questions
 1. Which flows would cost the most if broken? — Recommended: sign-in, payment/checkout, onboarding, and whatever makes money.

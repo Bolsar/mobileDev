@@ -120,66 +120,12 @@ References cite these as `[S#]`. Everything in this repo is condensed in our own
 - **S101** Google Play — Set up an open, closed or internal test — https://support.google.com/googleplay/android-developer/answer/9845334
 - **S102** Apple — App Tracking Transparency — https://developer.apple.com/documentation/apptrackingtransparency
 
-## Stack Packs (phase 3)
-### iOS
-- **S103** Swift — Concurrency (The Swift Programming Language) — https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/
-- **S104** Apple — Observation — https://developer.apple.com/documentation/observation
-- **S105** Apple — SwiftData — https://developer.apple.com/documentation/swiftdata
-- **S106** Apple — Swift Testing — https://developer.apple.com/xcode/swift-testing/
-- **S107** Apple — NavigationStack — https://developer.apple.com/documentation/swiftui/navigationstack
-- **S108** GRDB.swift — https://github.com/groue/GRDB.swift
+## Stack Packs
+S103–S154 moved to each `mobile-dev-<stack>` repo's `sources.md`.
+Kept here because core skills cite them too:
 - **S109** SwiftLint — https://github.com/realm/SwiftLint
-- **S110** Point-Free — swift-snapshot-testing — https://github.com/pointfreeco/swift-snapshot-testing
-- **S111** Apple — Localizing and varying text with a string catalog — https://developer.apple.com/documentation/xcode/localizing-and-varying-text-with-a-string-catalog
-- **S112** Swift — Migrating to Swift 6 — https://www.swift.org/migration/documentation/migrationguide/
-
-### Android
-- **S113** Android — Kotlin coroutines on Android — https://developer.android.com/kotlin/coroutines
-- **S114** Android — State and Jetpack Compose — https://developer.android.com/develop/ui/compose/state
-- **S115** Android — Compose performance — https://developer.android.com/develop/ui/compose/performance
-- **S116** Android — Manual dependency injection — https://developer.android.com/training/dependency-injection/manual
-- **S117** Android — Type safety in Navigation — https://developer.android.com/guide/navigation/design/type-safety
-- **S118** Android — Room — https://developer.android.com/training/data-storage/room
-- **S119** Android — DataStore — https://developer.android.com/topic/libraries/architecture/datastore
-- **S120** Android — Baseline Profiles — https://developer.android.com/topic/performance/baselineprofiles/overview
-- **S121** Android — Window insets in Compose (edge-to-edge) — https://developer.android.com/develop/ui/compose/system/insets
-- **S122** Android — Migrate to version catalogs — https://developer.android.com/build/migrate-to-catalogs
-- **S123** Android — Support 16 KB page sizes — https://developer.android.com/guide/practices/page-sizes
-- **S124** Android — Testing Kotlin coroutines — https://developer.android.com/kotlin/coroutines/test
-- **S125** Square — Retrofit — https://github.com/square/retrofit
-- **S126** Coil — https://coil-kt.github.io/coil/
-
-### Flutter
-- **S127** Flutter — Architecture recommendations — https://docs.flutter.dev/app-architecture/recommendations
-- **S128** Dart — Effective Dart — https://dart.dev/effective-dart
-- **S129** Flutter — Performance best practices — https://docs.flutter.dev/perf/best-practices
-- **S130** Flutter — Testing overview — https://docs.flutter.dev/testing/overview
-- **S131** go_router — https://pub.dev/packages/go_router
-- **S132** Drift — https://drift.simonbinder.eu/
-- **S133** Flutter — Flavors — https://docs.flutter.dev/deployment/flavors
-- **S134** Flutter — Obfuscate Dart code — https://docs.flutter.dev/deployment/obfuscate
-- **S135** Dart — Concurrency — https://dart.dev/language/concurrency
-- **S136** Riverpod — https://riverpod.dev/
-- **S137** Bloc — https://bloclibrary.dev/
-- **S138** Flutter — RestorationMixin — https://api.flutter.dev/flutter/widgets/RestorationMixin-mixin.html
-- **S139** FVM — https://fvm.app/
-
-### React Native
-- **S140** Expo — Expo Router — https://docs.expo.dev/router/introduction/
-- **S141** Expo — Development builds — https://docs.expo.dev/develop/development-builds/introduction/
-- **S142** Expo — Continuous Native Generation — https://docs.expo.dev/workflow/continuous-native-generation/
-- **S143** React Native — New Architecture — https://reactnative.dev/architecture/landing-page
-- **S144** React Native — Performance overview — https://reactnative.dev/docs/performance
-- **S145** Shopify — FlashList — https://shopify.github.io/flash-list/
-- **S146** Software Mansion — Reanimated — https://docs.swmansion.com/react-native-reanimated/
-- **S147** React Native Testing Library — https://callstack.github.io/react-native-testing-library/
 - **S148** Maestro — Docs — https://docs.maestro.dev/
-- **S149** Expo — Environment variables — https://docs.expo.dev/guides/environment-variables/
-- **S150** react-native-mmkv — https://github.com/mrousavy/react-native-mmkv
-- **S151** Zustand — https://zustand.docs.pmnd.rs/
 - **S152** TypeScript — `strict` — https://www.typescriptlang.org/tsconfig/#strict
-- **S153** Expo — SQLite — https://docs.expo.dev/versions/latest/sdk/sqlite/
-- **S154** React — You Might Not Need an Effect — https://react.dev/learn/you-might-not-need-an-effect
 
 ## Agent practice
 - **S155** Lauren Tan (@poteto) — *How I shipped 2,500 PRs last month* (talk, 2026) — https://x.com/poteto/status/2102050467505430555

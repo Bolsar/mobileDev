@@ -17,7 +17,7 @@ Read the project first. Ask only what it can't tell you.
 1. **Survey.** In an existing project, map what is there: layers, state holder type, DI, module layout, how one feature flows from UI to API. Done when you can trace one real feature end to end and name each hop.
 2. **Match or choose.**
    - Existing project: keep its architecture. List only real problems (a god ViewModel, business logic in views or importing UI frameworks, API models in the UI, mutable singletons, a global dependency container) with the file that shows each.
-   - Greenfield: use the default shape plus the Stack Pack default (`references/stacks/<stack>/`). One module, folders by feature.
+   - Greenfield: use the default shape plus the Stack Pack default (its `defaults.md`). One module, folders by feature.
 3. **Size it.** Add a domain layer or extra modules only for a named reason (shared logic, build time, team collisions). Each layer you add, write the reason next to it.
 4. **Dependencies.** Greenfield: plain constructor injection, graph assembled at the app entry point, one factory per feature. Existing project: keep its DI; flag a global container passed into features and mutable singletons, with a leaf-up plan to remove them (see "Dependency injection" in the architecture reference).
 5. **Record.** Write a Decision Record ([mindset/decisions.md](../../../mindset/decisions.md)) for every non-obvious choice: state holder, DI, modules, navigation.

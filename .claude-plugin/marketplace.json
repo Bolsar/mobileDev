@@ -9,6 +9,38 @@
       "name": "mobile-dev",
       "source": "./",
       "description": "A senior mobile engineer agent for iOS, Android, Flutter and React Native."
+    },
+    {
+      "name": "mobile-dev-ios",
+      "source": {
+        "source": "github",
+        "repo": "Bolsar/mobile-dev-ios"
+      },
+      "description": "iOS Stack Pack for mobile-dev: defaults, idioms, tooling and verify. Install with mobile-dev."
+    },
+    {
+      "name": "mobile-dev-android",
+      "source": {
+        "source": "github",
+        "repo": "Bolsar/mobile-dev-android"
+      },
+      "description": "Android Stack Pack for mobile-dev: defaults, idioms, tooling and verify. Install with mobile-dev."
+    },
+    {
+      "name": "mobile-dev-flutter",
+      "source": {
+        "source": "github",
+        "repo": "Bolsar/mobile-dev-flutter"
+      },
+      "description": "Flutter Stack Pack for mobile-dev: defaults, idioms, tooling and verify. Install with mobile-dev."
+    },
+    {
+      "name": "mobile-dev-react-native",
+      "source": {
+        "source": "github",
+        "repo": "Bolsar/mobile-dev-react-native"
+      },
+      "description": "React Native Stack Pack for mobile-dev: defaults, idioms, tooling and verify. Install with mobile-dev."
     }
   ]
 }

@@ -16,7 +16,7 @@ Run the loop in [mindset/debugging.md](../../../mindset/debugging.md): reproduce
 6. **Regression test** that fails without the fix.
 7. **Guard the release.** Live crash? Can a remote flag or backend change mitigate it now, before the fixed build clears review?
 8. **Guard the class.** Propose the type, boundary or lint rule that makes this crash impossible elsewhere ([agent-ready-codebase](../agent-ready-codebase/SKILL.md)).
-9. **Prove it.** Regression test output, plus a harness run of the repro flow if there is one ([mindset/verification.md](../../../mindset/verification.md)).
+9. **Prove it.** Regression test output, plus a `verify` run of the repro flow if there is one ([mindset/verification.md](../../../mindset/verification.md)).
 
 ## Output
 ```
