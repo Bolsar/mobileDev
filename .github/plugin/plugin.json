@@ -15,6 +15,7 @@
     "react-native"
   ],
   "skills": [
+    "./skills/",
     "./skills/engineering/",
     "./skills/design/",
     "./skills/collaboration/",
