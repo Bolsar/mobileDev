@@ -1,0 +1,6 @@
+{
+  "name": "mobile-dev",
+  "version": "0.8.0",
+  "description": "A senior mobile engineer agent for iOS, Android, Flutter and React Native. Add a mobile-dev-<stack> extension for stack specifics.",
+  "contextFileName": "GEMINI.md"
+}

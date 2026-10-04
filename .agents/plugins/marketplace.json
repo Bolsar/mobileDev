@@ -1,0 +1,48 @@
+{
+  "name": "bolsar",
+  "owner": {
+    "name": "Bolsar"
+  },
+  "plugins": [
+    {
+      "name": "mobile-dev",
+      "description": "A senior mobile engineer agent for iOS, Android, Flutter and React Native.",
+      "source": {
+        "source": "local",
+        "path": "./"
+      }
+    },
+    {
+      "name": "mobile-dev-ios",
+      "description": "iOS Stack Pack for mobile-dev: defaults, idioms, tooling and verify. Install with mobile-dev.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Bolsar/mobile-dev-ios.git"
+      }
+    },
+    {
+      "name": "mobile-dev-android",
+      "description": "Android Stack Pack for mobile-dev: defaults, idioms, tooling and verify. Install with mobile-dev.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Bolsar/mobile-dev-android.git"
+      }
+    },
+    {
+      "name": "mobile-dev-flutter",
+      "description": "Flutter Stack Pack for mobile-dev: defaults, idioms, tooling and verify. Install with mobile-dev.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Bolsar/mobile-dev-flutter.git"
+      }
+    },
+    {
+      "name": "mobile-dev-react-native",
+      "description": "React Native Stack Pack for mobile-dev: defaults, idioms, tooling and verify. Install with mobile-dev.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Bolsar/mobile-dev-react-native.git"
+      }
+    }
+  ]
+}

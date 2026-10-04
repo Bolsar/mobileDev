@@ -8,7 +8,7 @@ An AI agent that works and thinks like a senior mobile engineer, for iOS, Androi
 
 You say what you want. It plans and waits for your OK, then builds, verifies, opens a PR, reviews it and merges. Risky changes (migrations, permissions, signing, agent config) pause for your "merge". Every change and the review are in the PR if you want to look.
 
-It is plain markdown, so it works in any coding agent.
+It is plain markdown, so it works in any coding agent: a plugin for Claude Code, Copilot CLI, Codex, Gemini CLI and Cursor, or a folder you copy into your project for everything else.
 
 This repo is the shared core. Add the Stack Pack for your app's stack next to it:
 
@@ -24,22 +24,17 @@ Each Stack Pack holds that stack's defaults, idioms, tooling and a `verify` scri
 ## Install
 
 Pick your tool:
-[Claude Code](#claude-code) · [Codex](#codex) · [Cursor](#cursor) · [Gemini CLI](#gemini-cli) · [Antigravity](#antigravity) · [GitHub Copilot](#github-copilot) · [Other tools](#other-tools)
+[Claude Code](#claude-code) · [GitHub Copilot CLI](#github-copilot-cli) · [Codex](#codex) · [Gemini CLI](#gemini-cli) · [Cursor](#cursor) · [Antigravity, Copilot coding agent and others](#copy-into-your-project)
 
-Every tool except the Claude Code plugin starts by copying the agent into your app project. Commit the copy so your team gets it too:
-```sh
-git clone https://github.com/Bolsar/mobileDev .mobile-agent
-git clone https://github.com/Bolsar/mobile-dev-<stack> .mobile-agent/stacks/<stack>   # ios, android, flutter or react-native
-rm -rf .mobile-agent/.git .mobile-agent/stacks/*/.git
-```
+Each command set installs the agent once, for every project on your machine. Replace `<stack>` with `ios`, `android`, `flutter` or `react-native`.
 
 ### Claude Code
 ```sh
 claude plugin marketplace add Bolsar/mobileDev
 claude plugin install mobile-dev@bolsar
-claude plugin install mobile-dev-<stack>@bolsar   # ios, android, flutter or react-native
+claude plugin install mobile-dev-<stack>@bolsar
 ```
-No copy needed. Restart Claude Code after installing. In a Flutter, React Native, iOS or Android project, the agent turns on by itself when a session starts. Anywhere else, ask for it by name: `/mobile-dev:mobile-dev`.
+Restart Claude Code after installing. In a Flutter, React Native, iOS or Android project, the agent turns on by itself when a session starts. Anywhere else, ask for it by name: `/mobile-dev:mobile-dev`.
 
 To let it ship without a prompt at every step, use auto mode, or allow `git` and `gh pr` commands and deny the dangerous ones in `.claude/settings.json`:
 ```json
@@ -52,55 +47,47 @@ The deny list is a backstop only: it can't catch a bare `git push` while on `mai
 
 Guarded steps, such as committing agent config, come back to you as `!` commands to run.
 
-### Codex
-After the copy, add this line to `AGENTS.md` in your project root:
-```
-Read .mobile-agent/AGENTS.md and follow it for all mobile work.
+### GitHub Copilot CLI
+```sh
+copilot plugin marketplace add Bolsar/mobileDev
+copilot plugin install mobile-dev@bolsar
+copilot plugin install mobile-dev-<stack>@bolsar
 ```
 
-### Cursor
-After the copy, add this line to `AGENTS.md` in your project root:
+### Codex
+```sh
+codex plugin marketplace add Bolsar/mobileDev
 ```
-Read .mobile-agent/AGENTS.md and follow it for all mobile work.
-```
-Or create `.cursor/rules/mobile-agent.mdc`:
-```md
----
-description: Senior mobile engineer agent for all mobile app work
-alwaysApply: true
----
-Read .mobile-agent/AGENTS.md and follow it for all mobile work.
-```
+Then open `/plugins` in Codex and install `mobile-dev` and `mobile-dev-<stack>` from the `bolsar` marketplace.
 
 ### Gemini CLI
-After the copy, add this line to `GEMINI.md` in your project root:
+```sh
+gemini extensions install https://github.com/Bolsar/mobileDev
+gemini extensions install https://github.com/Bolsar/mobile-dev-<stack>
 ```
-Read .mobile-agent/AGENTS.md and follow it for all mobile work.
-```
-Run `/memory show` to check it loaded.
+Run `/extensions list` to check both loaded.
 
-### Antigravity
-Works for the IDE and the `agy` CLI. After the copy, add this line to `AGENTS.md` in your project root:
+### Cursor
+Open **Settings → Plugins → Install from Repository** and add both:
 ```
-Read .mobile-agent/AGENTS.md and follow it for all mobile work.
-```
-Or create `.agents/rules/mobile-agent.md`:
-```md
----
-trigger: always_on
----
-Read .mobile-agent/AGENTS.md and follow it for all mobile work.
+https://github.com/Bolsar/mobileDev
+https://github.com/Bolsar/mobile-dev-<stack>
 ```
 
-### GitHub Copilot
-For the Copilot coding agent. After the copy, add this line to `AGENTS.md` in your project root, then push:
+Outside Claude Code there is no session hook, so the agent doesn't turn on by itself. Ask for it: "use mobile-dev", or just ask for mobile work and the `mobile-dev` skill picks it up.
+
+### Copy into your project
+For Antigravity, the Copilot coding agent, and any other tool. It also pins the agent per project so your whole team gets it from git. Copy the agent into your app project and commit the copy:
+```sh
+git clone https://github.com/Bolsar/mobileDev .mobile-agent
+git clone https://github.com/Bolsar/mobile-dev-<stack> .mobile-agent/stacks/<stack>
+rm -rf .mobile-agent/.git .mobile-agent/stacks/*/.git
+```
+Then add this line to the instructions file your tool reads (`AGENTS.md` for Codex, Cursor, Antigravity and Copilot; `GEMINI.md` for Gemini CLI):
 ```
 Read .mobile-agent/AGENTS.md and follow it for all mobile work.
 ```
-Copilot runs on Linux or Windows, so it can't run the iOS simulator. To let it run your tests, install your toolchain in `.github/workflows/copilot-setup-steps.yml`.
-
-### Other tools
-After the copy, add the same line to whichever instructions file your tool reads.
+The Copilot coding agent runs on Linux or Windows, so it can't run the iOS simulator. To let it run your tests, install your toolchain in `.github/workflows/copilot-setup-steps.yml`.
 
 ## Use it
 Ask for what you need:
@@ -115,7 +102,8 @@ Ask for what you need:
 | `mindset/` | How a mobile engineer thinks |
 | `skills/` | Step-by-step skills: engineering, design, collaboration, product, release |
 | `references/` | Cited, stack-agnostic knowledge |
-| `hooks/` | Session hook: detects the stack and turns the agent on |
+| `hooks/` | Claude Code session hook: detects the stack and turns the agent on |
+| `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `.agents/plugins/`, `gemini-extension.json`, `GEMINI.md` | Plugin manifests per tool |
 | `evals/` | Smoke scenarios for the agent itself |
 
 Vocabulary: [CONTEXT.md](CONTEXT.md). Decisions: [docs/adr](docs/adr).
