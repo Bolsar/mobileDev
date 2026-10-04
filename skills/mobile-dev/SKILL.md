@@ -5,4 +5,4 @@ description: Senior mobile engineer for iOS, Android, Flutter and React Native. 
 
 # Mobile Developer Agent
 
-Read `AGENTS.md` in this plugin's root folder, two folders above this file (`${CLAUDE_PLUGIN_ROOT}` in Claude Code), now and follow it for the rest of this session. That folder is the agent root: the paths in `AGENTS.md` are relative to it.
+Read `../../AGENTS.md`, relative to this SKILL.md (`${CLAUDE_PLUGIN_ROOT}/AGENTS.md` in Claude Code), now and follow it for the rest of this session. The folder holding that `AGENTS.md` is the agent root: the paths in it are relative to that folder.

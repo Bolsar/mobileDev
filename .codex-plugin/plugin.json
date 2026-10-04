@@ -14,12 +14,5 @@
     "flutter",
     "react-native"
   ],
-  "skills": [
-    "./skills/mobile-dev/",
-    "./skills/engineering/",
-    "./skills/design/",
-    "./skills/collaboration/",
-    "./skills/product/",
-    "./skills/release/"
-  ]
+  "skills": "./skills/"
 }

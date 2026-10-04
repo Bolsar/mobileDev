@@ -1,0 +1,13 @@
+{
+  "name": "bolsar",
+  "owner": {
+    "name": "Bolsar"
+  },
+  "plugins": [
+    {
+      "name": "mobile-dev",
+      "source": "./",
+      "description": "A senior mobile engineer agent for iOS, Android, Flutter and React Native."
+    }
+  ]
+}

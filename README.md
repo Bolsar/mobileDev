@@ -26,7 +26,7 @@ Each Stack Pack holds that stack's defaults, idioms, tooling and a `verify` scri
 Pick your tool:
 [Claude Code](#claude-code) · [GitHub Copilot CLI](#github-copilot-cli) · [Codex](#codex) · [Gemini CLI](#gemini-cli) · [Cursor](#cursor) · [Antigravity, Copilot coding agent and others](#copy-into-your-project)
 
-Each command set installs the agent once, for every project on your machine. Replace `<stack>` with `ios`, `android`, `flutter` or `react-native`.
+Replace `<stack>` with `ios`, `android`, `flutter` or `react-native`.
 
 ### Claude Code
 ```sh
@@ -68,13 +68,14 @@ gemini extensions install https://github.com/Bolsar/mobile-dev-<stack>
 Run `/extensions list` to check both loaded.
 
 ### Cursor
-Open **Settings → Plugins → Install from Repository** and add both:
+Teams: an admin opens **Dashboard → Settings → Plugins → Import** under Team Marketplaces and imports both repo URLs (needs the Cursor GitHub App on the repos):
 ```
 https://github.com/Bolsar/mobileDev
 https://github.com/Bolsar/mobile-dev-<stack>
 ```
+Solo: use [Copy into your project](#copy-into-your-project).
 
-Outside Claude Code there is no session hook, so the agent doesn't turn on by itself. Ask for it: "use mobile-dev", or just ask for mobile work and the `mobile-dev` skill picks it up.
+Only Claude Code turns the agent on by itself when a session starts. In other tools, ask for it: "use mobile-dev", or ask for mobile work and the `mobile-dev` skill picks it up.
 
 ### Copy into your project
 For Antigravity, the Copilot coding agent, and any other tool. It also pins the agent per project so your whole team gets it from git. Copy the agent into your app project and commit the copy:
@@ -103,7 +104,7 @@ Ask for what you need:
 | `skills/` | Step-by-step skills: engineering, design, collaboration, product, release |
 | `references/` | Cited, stack-agnostic knowledge |
 | `hooks/` | Claude Code session hook: detects the stack and turns the agent on |
-| `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `.agents/plugins/`, `gemini-extension.json`, `GEMINI.md` | Plugin manifests per tool |
+| `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `.github/plugin/`, `.agents/plugins/`, `gemini-extension.json`, `GEMINI.md` | Plugin manifests per tool |
 | `evals/` | Smoke scenarios for the agent itself |
 
 Vocabulary: [CONTEXT.md](CONTEXT.md). Decisions: [docs/adr](docs/adr).

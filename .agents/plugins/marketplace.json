@@ -1,5 +1,8 @@
 {
   "name": "bolsar",
+  "interface": {
+    "displayName": "Bolsar"
+  },
   "owner": {
     "name": "Bolsar"
   },
@@ -10,7 +13,12 @@
       "source": {
         "source": "local",
         "path": "./"
-      }
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     },
     {
       "name": "mobile-dev-ios",
@@ -18,7 +26,12 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Bolsar/mobile-dev-ios.git"
-      }
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     },
     {
       "name": "mobile-dev-android",
@@ -26,7 +39,12 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Bolsar/mobile-dev-android.git"
-      }
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     },
     {
       "name": "mobile-dev-flutter",
@@ -34,7 +52,12 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Bolsar/mobile-dev-flutter.git"
-      }
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     },
     {
       "name": "mobile-dev-react-native",
@@ -42,7 +65,12 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Bolsar/mobile-dev-react-native.git"
-      }
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     }
   ]
 }
