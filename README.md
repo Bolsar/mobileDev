@@ -68,7 +68,7 @@ gemini extensions install https://github.com/Bolsar/mobile-dev-<stack>
 Run `/extensions list` to check both loaded.
 
 ### Cursor
-Teams: an admin opens **Dashboard → Settings → Plugins → Import** under Team Marketplaces and imports both repo URLs (needs the Cursor GitHub App on the repos):
+Teams: an admin opens **Dashboard → Plugins & MCPs → Team Marketplaces → Add Marketplace → Import from Repo** and imports both repo URLs (install the Cursor GitHub App on them for auto-refresh):
 ```
 https://github.com/Bolsar/mobileDev
 https://github.com/Bolsar/mobile-dev-<stack>
